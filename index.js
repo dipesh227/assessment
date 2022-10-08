@@ -62,6 +62,7 @@ app.post("/insert", function (req, res) {
         conn.query(sql, function (error, results) {
           if (error) console.log(error);
           localStorage.setItem("username", email);
+          alert("register sucsessfuly");
           res.redirect("/");
         });
       }
@@ -148,6 +149,7 @@ app.get("/edit/:email", function (req, res) {
 // route for login
 app.get("/logout", function (req, res) {
   localStorage.clear();
+  alert("logout secsessfull");
   res.redirect("/");
 });
 // start server at port 4000
